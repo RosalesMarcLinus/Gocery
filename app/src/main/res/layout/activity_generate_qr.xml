@@ -1,0 +1,43 @@
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:padding="16dp">
+
+    <Spinner
+        android:id="@+id/storeSpinner"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="8dp" />
+
+    <Spinner
+        android:id="@+id/productSpinner"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="8dp" />
+
+    <TextView
+        android:id="@+id/productInfoText"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="8dp"
+        android:text="Product Info"
+        android:textSize="16sp" />
+
+    <Button
+        android:id="@+id/btnShowProductInfo"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Generate QR"
+        android:layout_marginBottom="8dp" />
+
+
+    <ImageView
+        android:id="@+id/qrCodeImageView"
+        android:layout_width="200dp"
+        android:layout_height="200dp"
+        android:layout_gravity="center"
+        android:layout_marginTop="16dp"
+        android:contentDescription="QR Code Image" />
+</LinearLayout>

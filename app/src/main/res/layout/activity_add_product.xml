@@ -1,0 +1,112 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:padding="16dp"
+    android:scrollbars="vertical">
+
+    <!-- Product Name -->
+    <TextView
+        android:id="@+id/productNameLabel"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Product Name"
+        android:textSize="16sp"
+        android:layout_marginTop="16dp"/>
+
+    <EditText
+        android:id="@+id/productName"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:hint="Enter product name"
+        android:inputType="text"/>
+
+    <!-- Product Price -->
+    <TextView
+        android:id="@+id/productPriceLabel"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Price"
+        android:textSize="16sp"
+        android:layout_marginTop="16dp"/>
+
+    <EditText
+        android:id="@+id/productPrice"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:hint="Enter price"
+        android:inputType="numberDecimal"/>
+
+    <!-- Product Weight -->
+    <TextView
+        android:id="@+id/productWeightLabel"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Weight"
+        android:textSize="16sp"
+        android:layout_marginTop="16dp"/>
+
+    <EditText
+        android:id="@+id/productWeight"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:hint="Enter weight (e.g., 1kg)"
+        android:inputType="text"/>
+
+    <!-- Product Category -->
+    <TextView
+        android:id="@+id/productCategoryLabel"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Category"
+        android:textSize="16sp"
+        android:layout_marginTop="16dp"/>
+
+    <EditText
+        android:id="@+id/productCategory"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:hint="Enter category (e.g., Fruits)"
+        android:inputType="text"/>
+
+    <!-- Inventory Count -->
+    <TextView
+        android:id="@+id/productInventoryCountLabel"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Inventory Count"
+        android:textSize="16sp"
+        android:layout_marginTop="16dp"/>
+
+    <EditText
+        android:id="@+id/productInventoryCount"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:hint="Enter inventory count"
+        android:inputType="number"/>
+
+    <!-- Store Dropdown (Spinner) -->
+    <TextView
+        android:id="@+id/storeSpinnerLabel"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Select Store"
+        android:textSize="16sp"
+        android:layout_marginTop="16dp"/>
+
+    <Spinner
+        android:id="@+id/storeSpinner"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="8dp"/>
+
+    <!-- Submit Button -->
+    <Button
+        android:id="@+id/submitProductButton"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Add Product"
+        android:layout_marginTop="24dp"/>
+
+</LinearLayout>

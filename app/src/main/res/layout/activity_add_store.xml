@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:padding="16dp">
+
+    <!-- Store Name Input -->
+    <EditText
+        android:id="@+id/storeName"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:hint="Store Name"
+        android:inputType="text" />
+
+    <!-- Store Location Input -->
+    <EditText
+        android:id="@+id/storeLocation"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:hint="Store Location"
+        android:inputType="text" />
+
+    <!-- Store Phone Input -->
+    <EditText
+        android:id="@+id/storePhone"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:hint="Store Phone"
+        android:inputType="phone" />
+
+    <!-- Add Store Button -->
+    <Button
+        android:id="@+id/btnSubmitStore"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Add Store"
+        android:onClick="addStore" />
+</LinearLayout>

@@ -1,0 +1,29 @@
+{
+  "project_info": {
+    "project_number": "993696815771",
+    "project_id": "gocery-cd661",
+    "storage_bucket": "gocery-cd661.firebasestorage.app"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:993696815771:android:645c296ac9dbe0ccbb443e",
+        "android_client_info": {
+          "package_name": "com.example.gocery"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyD9j5YPtWbSfhy5aJIblpnTVBqQbQyQXmU"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

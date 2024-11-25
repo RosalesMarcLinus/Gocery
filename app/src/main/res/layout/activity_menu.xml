@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:padding="20dp"
+    android:gravity="center"
+    android:background="@android:color/white">
+
+    <!-- Add Store Button -->
+    <Button
+        android:id="@+id/btnAddStore"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Add Store"
+        android:layout_marginBottom="20dp"
+        android:backgroundTint="@android:color/holo_blue_dark"
+        android:textColor="@android:color/white"
+        android:padding="10dp" />
+
+    <!-- Add Product Button -->
+    <Button
+        android:id="@+id/btnAddProduct"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Add Product"
+        android:layout_marginBottom="20dp"
+        android:backgroundTint="@android:color/holo_green_dark"
+        android:textColor="@android:color/white"
+        android:padding="10dp" />
+
+    <!-- Generate QR Button -->
+    <Button
+        android:id="@+id/btnGenerateQR"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Generate QR"
+        android:backgroundTint="@android:color/holo_orange_dark"
+        android:textColor="@android:color/white"
+        android:padding="10dp" />
+
+</LinearLayout>
