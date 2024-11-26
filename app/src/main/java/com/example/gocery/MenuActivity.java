@@ -9,7 +9,7 @@ import androidx.appcompat.app.AppCompatActivity;
 
 public class MenuActivity extends AppCompatActivity {
 
-    private Button btnAddStore, btnAddProduct, btnGenerateQR;
+    private Button btnAddStore, btnAddProduct, btnGenerateQR, btnInventory;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -20,6 +20,8 @@ public class MenuActivity extends AppCompatActivity {
         btnAddStore = findViewById(R.id.btnAddStore);
         btnAddProduct = findViewById(R.id.btnAddProduct);
         btnGenerateQR = findViewById(R.id.btnGenerateQR);
+        btnInventory = findViewById(R.id.btnCheckInventory);
+
 
         // Set onClickListeners for navigation
         btnAddStore.setOnClickListener(new View.OnClickListener() {
@@ -45,6 +47,14 @@ public class MenuActivity extends AppCompatActivity {
             public void onClick(View v) {
                 // Navigate to GenerateQR activity
                 Intent intent = new Intent(MenuActivity.this, GenerateQrActivity.class);
+                startActivity(intent);
+            }
+        });
+        btnInventory.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                // Navigate to GenerateQR activity
+                Intent intent = new Intent(MenuActivity.this, InventoryActivity.class);
                 startActivity(intent);
             }
         });

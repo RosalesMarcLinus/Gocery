@@ -29,6 +29,7 @@
         <activity android:name=".AddProduct"></activity>
         <activity android:name=".MenuActivity"></activity>
         <activity android:name=".GenerateQrActivity"></activity>
+        <activity android:name=".InventoryActivity"></activity>
 
     </application>
     <uses-permission android:name="android.permission.INTERNET" />
