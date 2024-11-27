@@ -1,103 +1,173 @@
 <?xml version="1.0" encoding="utf-8"?>
-<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:orientation="vertical"
-    android:padding="16dp"
-    android:scrollbars="vertical">
+    android:background="@drawable/gocery_bg"
+    tools:ignore="MissingClass">
 
     <TextView
-        android:id="@+id/productNameLabel"
+        android:id="@+id/tvHeader"
+        android:layout_width="425dp"
+        android:layout_height="82dp"
+        android:background="@drawable/header_background_yellow"
+        android:gravity="center"
+        android:paddingStart="21dp"
+        android:text="@string/add_product"
+        android:textColor="@color/white"
+        android:textSize="28sp"
+        android:textStyle="bold"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <ImageButton
+        android:id="@+id/btnBack"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="Product Name"
-        android:textSize="16sp"
-        android:layout_marginTop="16dp"/>
+        android:layout_marginTop="4dp"
+        android:background="?attr/selectableItemBackgroundBorderless"
+        android:contentDescription="@string/back"
+        android:padding="16dp"
+        android:src="@drawable/ic_arrow_back"
+        app:layout_constraintStart_toStartOf="@id/tvHeader"
+        app:layout_constraintTop_toTopOf="@id/tvHeader"
+        app:tint="@color/white" />
 
-    <EditText
-        android:id="@+id/productName"
+    <ScrollView
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        app:layout_constraintTop_toBottomOf="@id/tvHeader"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent">
+
+    </ScrollView>
+
+    <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:hint="Enter product name"
-        android:inputType="text"/>
+        android:layout_gravity="center_vertical"
+        android:orientation="vertical"
+        android:padding="16dp"
+        tools:layout_editor_absoluteX="2dp"
+        tools:layout_editor_absoluteY="75dp"
+        tools:ignore="MissingConstraints">
 
-    <TextView
-        android:id="@+id/productPriceLabel"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="Price"
-        android:textSize="16sp"
-        android:layout_marginTop="16dp"/>
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="8dp"
+            android:text="@string/store"
+            android:textColor="@color/colorAccentDark"
+            android:textSize="16sp" />
 
-    <EditText
-        android:id="@+id/productPrice"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:hint="Enter price"
-        android:inputType="numberDecimal"/>
+        <Spinner
+            android:id="@+id/storeSpinner"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="16dp"
+            android:background="@drawable/spinner_background_yellow"
+            android:padding="12dp" />
 
-    <TextView
-        android:id="@+id/productWeightLabel"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="Weight (grams)"
-        android:textSize="16sp"
-        android:layout_marginTop="16dp"/>
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="8dp"
+            android:text="@string/product_name"
+            android:id="@+id/productNameLabel"
+            android:textColor="@color/colorAccentDark"
+            android:textSize="16sp" />
 
-    <EditText
-        android:id="@+id/productWeight"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:hint="Enter weight in grams"
-        android:inputType="number"/>
+        <EditText
+            android:id="@+id/productName"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="16dp"
+            android:background="@drawable/edit_text_background_yellow"
+            android:inputType="text"
+            android:hint="Enter Product Name"
+            android:padding="12dp" />
 
-    <TextView
-        android:id="@+id/productCategoryLabel"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="Category"
-        android:textSize="16sp"
-        android:layout_marginTop="16dp"/>
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="8dp"
+            android:text="@string/price"
+            android:textColor="@color/colorAccentDark"
+            android:textSize="16sp" />
 
-    <Spinner
-        android:id="@+id/productCategorySpinner"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="8dp"/>
+        <EditText
+            android:id="@+id/productPrice"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="16dp"
+            android:hint="Enter Product Price"
+            android:background="@drawable/edit_text_background_yellow"
+            android:inputType="numberDecimal"
+            android:padding="12dp" />
 
-    <TextView
-        android:id="@+id/productInventoryCountLabel"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="Inventory Count"
-        android:textSize="16sp"
-        android:layout_marginTop="16dp"/>
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="8dp"
+            android:text="@string/weight"
+            android:textColor="@color/colorAccentDark"
+            android:textSize="16sp" />
 
-    <EditText
-        android:id="@+id/productInventoryCount"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:hint="Enter inventory count"
-        android:inputType="number"/>
+        <EditText
+            android:id="@+id/productWeight"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="16dp"
+            android:hint="Enter Weight in Grams"
+            android:background="@drawable/edit_text_background_yellow"
+            android:inputType="numberDecimal"
+            android:padding="12dp" />
 
-    <TextView
-        android:id="@+id/storeSpinnerLabel"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="Select Store"
-        android:textSize="16sp"
-        android:layout_marginTop="16dp"/>
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="8dp"
+            android:text="@string/category"
+            android:textColor="@color/colorAccentDark"
+            android:textSize="16sp" />
 
-    <Spinner
-        android:id="@+id/storeSpinner"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="8dp"/>
+        <Spinner
+            android:id="@+id/productCategorySpinner"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="16dp"
+            android:background="@drawable/spinner_background_yellow"
+            android:padding="12dp" />
 
-    <Button
-        android:id="@+id/submitProductButton"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:text="Add Product"
-        android:layout_marginTop="24dp"/>
-</LinearLayout>
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="8dp"
+            android:text="@string/inventory_count"
+            android:textColor="@color/colorAccentDark"
+            android:textSize="16sp" />
+
+        <EditText
+            android:id="@+id/productInventoryCount"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="24dp"
+            android:hint="Enter Product Quantity"
+            android:background="@drawable/edit_text_background_yellow"
+            android:inputType="number"
+            android:padding="12dp" />
+
+        <com.google.android.material.button.MaterialButton
+            android:id="@+id/submitProductButton"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:backgroundTint="@color/colorAccent"
+            android:padding="12dp"
+            android:text="@string/add_product"
+            android:textSize="18sp" />
+
+    </LinearLayout>
+</androidx.constraintlayout.widget.ConstraintLayout>
