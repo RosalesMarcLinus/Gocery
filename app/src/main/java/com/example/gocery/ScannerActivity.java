@@ -20,6 +20,7 @@ import android.content.pm.PackageManager;
 import android.media.Image;
 import android.os.Bundle;
 import android.util.Log;
+import android.widget.ImageButton;
 import android.widget.Toast;
 
 //google imports
@@ -51,6 +52,7 @@ public class ScannerActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_scanner);
+        getSupportActionBar().hide();  // Hides the action bar
 
         previewView = findViewById(R.id.viewFinder);
 
@@ -71,6 +73,7 @@ public class ScannerActivity extends AppCompatActivity {
                 .build();
         scanner = BarcodeScanning.getClient(options);
         cameraExecutor = Executors.newSingleThreadExecutor();
+
     }
 
     @ExperimentalGetImage

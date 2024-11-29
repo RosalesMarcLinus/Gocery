@@ -6,6 +6,7 @@ import android.widget.AdapterView;
 import android.widget.ArrayAdapter;
 import android.widget.Button;
 import android.widget.EditText;
+import android.widget.ImageButton;
 import android.widget.Spinner;
 import android.widget.Toast;
 
@@ -40,6 +41,7 @@ public class AddProduct extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_add_product);
+        getSupportActionBar().hide();  // Hides the action bar
 
         // Initialize Firebase Firestore and FirebaseAuth
         db = FirebaseFirestore.getInstance();
@@ -62,6 +64,9 @@ public class AddProduct extends AppCompatActivity {
 
         // Set the submit button click listener
         submitProductButton.setOnClickListener(v -> addProductToStore());
+        ImageButton btnBack = findViewById(R.id.btnBack);
+        btnBack.setOnClickListener(view -> finish());
+
     }
 
     private void populateCategorySpinner() {

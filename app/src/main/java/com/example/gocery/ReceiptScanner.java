@@ -52,6 +52,7 @@ public class ReceiptScanner extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_receipt_scanner);
+        getSupportActionBar().hide();  // Hides the action bar
 
         previewView = findViewById(R.id.viewFinder);
 

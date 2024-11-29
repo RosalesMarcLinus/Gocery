@@ -1,15 +1,18 @@
 package com.example.gocery;
 
+import android.graphics.Typeface;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.AdapterView;
 import android.widget.ArrayAdapter;
+import android.widget.ImageButton;
 import android.widget.LinearLayout;
 import android.widget.Spinner;
 import android.widget.TextView;
 import android.widget.Toast;
 
 import androidx.appcompat.app.AppCompatActivity;
+import androidx.cardview.widget.CardView;
 
 import com.google.firebase.firestore.FirebaseFirestore;
 
@@ -30,6 +33,7 @@ public class InventoryActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_inventory); // Link the XML layout here
+        getSupportActionBar().hide();  // Hides the action bar
 
         // Initialize Firestore
         db = FirebaseFirestore.getInstance();
@@ -60,6 +64,8 @@ public class InventoryActivity extends AppCompatActivity {
                 // Optionally handle the case when no item is selected
             }
         });
+        ImageButton btnBack = findViewById(R.id.btnBack);
+        btnBack.setOnClickListener(view -> finish());
 
     }
 
@@ -136,16 +142,57 @@ public class InventoryActivity extends AppCompatActivity {
     }
 
 
-    // Dynamically add an inventory item to the layout
     private void addInventoryItem(String productName, String price, String stock) {
-        TextView itemView = new TextView(this);
-        itemView.setText(
-                "Name: " + productName + "\n" +
-                        "Price: " + price + "\n" +
-                        "Inventory Count: " + stock
-        );
-        itemView.setPadding(8, 8, 8, 8);
-        itemView.setTextSize(16);
-        inventoryLayout.addView(itemView);
+        // Create a new CardView
+        CardView cardView = new CardView(this);
+        cardView.setLayoutParams(new LinearLayout.LayoutParams(
+                LinearLayout.LayoutParams.MATCH_PARENT,
+                LinearLayout.LayoutParams.WRAP_CONTENT
+        ));
+        cardView.setRadius(8f);
+        cardView.setCardElevation(4f);
+        cardView.setUseCompatPadding(true);
+        cardView.setContentPadding(16, 16, 16, 16);
+        cardView.setLayoutParams(new LinearLayout.LayoutParams(
+                LinearLayout.LayoutParams.MATCH_PARENT,
+                LinearLayout.LayoutParams.WRAP_CONTENT
+        ) {{
+            setMargins(8, 8, 8, 8);
+        }});
+
+        // Create a container for text views
+        LinearLayout itemContainer = new LinearLayout(this);
+        itemContainer.setOrientation(LinearLayout.VERTICAL);
+
+        // Product Name
+        TextView nameView = new TextView(this);
+        nameView.setText("Product: " + productName);
+        nameView.setTextSize(18f);
+        nameView.setTextColor(getResources().getColor(R.color.colorPrimaryDark));
+        nameView.setTypeface(null, Typeface.BOLD);
+
+        // Price
+        TextView priceView = new TextView(this);
+        priceView.setText("Price: " + price);
+        priceView.setTextSize(16f);
+        priceView.setTextColor(getResources().getColor(R.color.colorAccent));
+
+        // Stock Count
+        TextView stockView = new TextView(this);
+        stockView.setText("Stock: " + stock);
+        stockView.setTextSize(16f);
+        stockView.setTextColor(getResources().getColor(R.color.colorSecondary));
+
+        // Add all views to the container
+        itemContainer.addView(nameView);
+        itemContainer.addView(priceView);
+        itemContainer.addView(stockView);
+
+        // Add the container to the CardView
+        cardView.addView(itemContainer);
+
+        // Add the CardView to the inventory layout
+        inventoryLayout.addView(cardView);
     }
+
 }

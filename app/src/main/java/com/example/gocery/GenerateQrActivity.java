@@ -6,6 +6,7 @@ import android.view.View;
 import android.widget.AdapterView;
 import android.widget.ArrayAdapter;
 import android.widget.Button;
+import android.widget.ImageButton;
 import android.widget.ImageView;
 import android.widget.Spinner;
 import android.widget.TextView;
@@ -36,6 +37,7 @@ public class GenerateQrActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_generate_qr);
+        getSupportActionBar().hide();  // Hides the action bar
 
         // Initialize Firebase Firestore
         db = FirebaseFirestore.getInstance();
@@ -84,6 +86,9 @@ public class GenerateQrActivity extends AppCompatActivity {
                 // Handle case when nothing is selected
             }
         });
+        ImageButton btnBack = findViewById(R.id.btnBack);
+        btnBack.setOnClickListener(view -> finish());
+
     }
 
     // Fetch store list from Firestore

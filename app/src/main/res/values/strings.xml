@@ -31,4 +31,20 @@
     <string name="purchased_products">Purchased Products</string>
     <string name="total">Total: $%.2f</string>
     <string name="confirm_receipt">Confirm Receipt</string>
+    <string-array name="user_types">
+        <item>Admin</item>
+        <item>Customer</item>
+    </string-array>
+    <string name="select_store">Select Store</string>
+    <string name="inventory_list">Inventory List</string>
+    <string name="receipt_details">Receipt Details</string>
+    <string name="purchased_items">Purchased Items</string>
+    <string name="checkout">Checkout</string>
+    <string name="scan_qr_code">Scan QR Code</string>
+    <string name="total_price">Total: $0.00</string>
+    <string name="remove">Remove</string>
+    <string name="expand_category">Expand category</string>
+    <string name="align_qr_code">Align QR code within the frame</string>
+    <string name="capture_image">Capture Image</string>
+    <string name="close_camera">Close Camera</string>
 </resources>
